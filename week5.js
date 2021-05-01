@@ -16,8 +16,8 @@
 window.addEventListener('DOMContentLoaded', async function() {
   
   // Get a reference to the "get weather" button
-  let weatherButton = document.querySelector(`button`)
-  
+  let weatherButton = document.querySelector(`.get-weather`)
+
   // When the "get weather" button is clicked:
   weatherButton.addEventListener(`click`, async function(event){
 
@@ -83,5 +83,11 @@ window.addEventListener('DOMContentLoaded', async function() {
         <h2 class="text-xl">High ${weatherLoop.day.maxtemp_c}°C – Low ${weatherLoop.day.mintemp_c}°C</h2>
         <p class="text-gray-500">${weatherLoop.day.condition.text}</h1>
       </div>`)}
-}})})
+}})
+// Get a reference to the "clear results" button
+let clearResults = document.querySelector(`.clear-results`)
+  
+// If clicked, refresh the page
+clearResults.addEventListener(`click`, async function(event) {window.location.reload(false)})
+})
 
